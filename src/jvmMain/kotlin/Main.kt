@@ -40,10 +40,10 @@ fun main() = application {
 @Preview
 fun App() {
     var text by remember { mutableStateOf("Hello, World!") }
-    val focusRequester = FocusRequester()
+    val focusRequester = remember { FocusRequester() }
 
     MaterialTheme {
-        Row {
+        Column {
             Button(modifier = Modifier.focusable(false), onClick = {
                 text = "Hello, Desktop!"
             }) {
